@@ -1606,7 +1606,7 @@ extern void make_frame_picture_JV( VideoParameters *p_Vid );
 
 
 
-char errortext[ET_SIZE]; //!< buffer for error message for exit with error()
+extern char errortext[ET_SIZE]; //!< buffer for error message for exit with error()
 extern void setup_coding_layer(VideoParameters *p_Vid);
 
 static inline int is_FREXT_profile(unsigned int profile_idc) 

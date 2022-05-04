@@ -78,6 +78,7 @@
 // software. Global variables should be avoided.
 DecoderParams  *p_Dec;
 char errortext[ET_SIZE];
+InputParameters cfgparams;
 
 // Prototypes of static functions
 static void Report      (VideoParameters *p_Vid);

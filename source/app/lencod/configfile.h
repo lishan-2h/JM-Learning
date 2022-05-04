@@ -20,7 +20,7 @@
 #define PROFILE_IDC     88
 #define LEVEL_IDC       21
 
-InputParameters cfgparams;
+extern InputParameters cfgparams;
 
 
 #ifdef INCLUDED_BY_CONFIGFILE_C

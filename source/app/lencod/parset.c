@@ -1189,7 +1189,7 @@ int GenerateSEImessage_rbsp (InputParameters *p_Inp, int id, byte *rbsp)
 
     if (message_size == 0)
     {
-      message_size = 13;
+      message_size = 14;
       strncpy(sei_message,"Empty Message",message_size);
     }
     else

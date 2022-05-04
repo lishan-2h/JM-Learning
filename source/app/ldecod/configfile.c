@@ -206,17 +206,20 @@ void ParseCommand(InputParameters *p_Inp, int ac, char *av[])
     } 
     else if (0 == strncmp (av[CLcount], "-i", 2) || 0 == strncmp (av[CLcount], "-I", 2))  // A file parameter?
     {
-      strncpy(p_Inp->infile, av[CLcount+1], FILE_NAME_SIZE);
+      strncpy(p_Inp->infile, av[CLcount+1], FILE_NAME_SIZE-1);
+      p_Inp->infile[FILE_NAME_SIZE] = '\0';
       CLcount += 2;
     } 
     else if (0 == strncmp (av[CLcount], "-r", 2) || 0 == strncmp (av[CLcount], "-R", 2))  // A file parameter?
     {
-      strncpy(p_Inp->reffile, av[CLcount+1], FILE_NAME_SIZE);
+      strncpy(p_Inp->reffile, av[CLcount+1], FILE_NAME_SIZE-1);
+      p_Inp->reffile[FILE_NAME_SIZE] = '\0';
       CLcount += 2;
     } 
     else if (0 == strncmp (av[CLcount], "-o", 2) || 0 == strncmp (av[CLcount], "-O", 2))  // A file parameter?
     {
-      strncpy(p_Inp->outfile, av[CLcount+1], FILE_NAME_SIZE);
+      strncpy(p_Inp->outfile, av[CLcount+1], FILE_NAME_SIZE-1);
+      p_Inp->outfile[FILE_NAME_SIZE] = '\0';
       CLcount += 2;
     } 
     else if (0 == strncmp (av[CLcount], "-s", 2) || 0 == strncmp (av[CLcount], "-S", 2))  // A file parameter?

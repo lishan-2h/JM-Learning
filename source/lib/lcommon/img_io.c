@@ -153,7 +153,7 @@ int ParseSizeFromString (VideoDataFile *input_file, int *x_size, int *y_size, do
  */
 void ParseFrameNoFormatFromString (VideoDataFile *input_file)
 {
-  char *p1, *p2, *tail;  
+  char *p1, *p2, *tail;
   char *fn         = input_file->fname;
   char *fhead      = input_file->fhead;
   char *ftail      = input_file->ftail;
@@ -199,7 +199,8 @@ void ParseFrameNoFormatFromString (VideoDataFile *input_file)
     *p2 = 'd';
 
     tail++;
-    strncpy(ftail, tail, (int) strlen(tail));
+    strncpy(ftail, tail, FILE_NAME_SIZE-1);
+    ftail[FILE_NAME_SIZE] = '\0';
     break;
   }
 
@@ -220,8 +221,8 @@ void ParseFrameNoFormatFromString (VideoDataFile *input_file)
 void OpenFrameFile( VideoDataFile *input_file, int FrameNumberInFile)
 {
   char infile [FILE_NAME_SIZE], in_number[16];
+  strncpy(infile, input_file->fhead, FILE_NAME_SIZE);
   infile[FILE_NAME_SIZE-1]='\0';
-  strncpy(infile, input_file->fhead, FILE_NAME_SIZE-1);
 
   if (input_file->zero_pad)       
     snprintf(in_number, 16, "%0*d", input_file->num_digits, FrameNumberInFile);
